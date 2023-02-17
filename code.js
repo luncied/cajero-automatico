@@ -7,6 +7,8 @@ let cuentas = [
     {nombre:'Maui', saldo:67},
 ];
 
+
+
 // Añadir nuevos usuarios o cuentas
 // Eliminar cuentas pidiendo la contraseña (asegurate de retirar tu dinero o introduce una CLABE para transferir tu dinero a otra cuenta)
 // Si el password es incorrecto, notificar al usuario e intentarlo nuevamente
@@ -18,8 +20,27 @@ let cuentas = [
 // Retirar Monto
 
 
-function createAccount(){};
-function deleteAccount(){};
+function createAccount(newName, balance=0, eMail, password){
+    cuentas.push(
+        {
+            nombre:newName, 
+            saldo:balance, 
+            correo:eMail, 
+            contraseña:password
+        }
+    );
+};
+
+// Extraer unicamente el objeto del array "cuentas"
+function loginSession(){
+    currentSession
+};
+
+// Esta de aqui se puede cambiar y usar el objeto creado en loginSession()
+function deleteAccount(nameToDelete){
+    let userToDelete = cuentas.filter(user => user.nombre === nameToDelete);
+    cuentas.unshift(userToDelete);
+};
 
 function insertPassword(){};
 function changePassword(){};
