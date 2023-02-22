@@ -1,6 +1,50 @@
+header {
+    /*background: #83a4d4;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 
-.action-ribon {
+    background: #8ca6db;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #B993D6, #8ca6db);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #B993D6, #8ca6db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+header > nav.main-top-navbar {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header > nav.main-top-navbar > span#logo {
+    display: flex;
+    background-color: red;
+    justify-content: left;
+}
+
+header > nav.main-top-navbar > h1 {
+    /* position: absolute; */
+    display: flex;
+    color: white;
+}
+
+section.login-form {
+    display: flex;
+    max-height: 37rem;
+    width: auto;
+    justify-content: center;
+    align-items:center;
+    /* text-align: center; */
+}
+
+form.login {
+    border: 1px black solid;
+    padding: 5rem;
+}
+
+form.login button {
+    padding: 2px 10px;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
     align-items: center;
-    text-align:justify;
 }
