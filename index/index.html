@@ -22,14 +22,15 @@
     </header>
     <main>
         <section class="login-form">
-            <form class="login">
+            <form class="login" id="login-form">
                 <label for="userName">Nombre de usuario</label>
-                <input type="text" id="userName" placeholder="Introduce tu nombre"><br>
+                <input type="text" name="userName" id="userName" placeholder="Introduce tu nombre"><br>
 
                 <label for="pass">Contraseña</label>
-                <input type="password" id="pass" placeholder="Ingresa tu nip"><br>
+                <input type="password" name="pass" id="pass" placeholder="Ingresa tu nip"><br>
 
-                <button type="submit" onclick="loginSession()">Ingresar</button>
+                <!-- <input type="submit" id="submit-login" value="Ingresar"> -->
+                <button type="submit" id="submit-login">Ingresar</button>
             </form>
         </section>
     </main>
