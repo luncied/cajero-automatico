@@ -1,53 +1,66 @@
-header {
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header.main-page-header{
     font-family: Calibri;
+
     background: #8ca6db;  /* fallback for old browsers */
+    /*
     background: -webkit-linear-gradient(to left, #B993D6, #8ca6db);  /* Chrome 10-25, Safari 5.1-6 */
+
+    /*
     background: linear-gradient(to left, #B993D6, #8ca6db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-header > nav.main-top-navbar {
+nav.main-top-navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-header > nav.main-top-navbar > span#logo {
-    background-color: red;
+nav.main-top-navbar > span#logo {
     justify-content: left;
 }
 
-header > nav.main-top-navbar > h1 {
+nav.main-top-navbar > h1 {
     color: white;
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
     font-family: Calibri;
     height: 100%;
     width: 100%;
-    min-height: 200px;
-    position: absolute;
-
+    min-height:86vh;
 }
+
 section.login-form {
     display: flex;
-    height: 70%;
+    height: 85%;
     width: 100%;
     justify-content: center;
     align-items:center;
 }
 
 form.login {
+    background-color: white;
+    border: 1px red solid;
+    box-shadow: 12rem;
     display: flex;
     border: 1px black solid;
-    padding: 5rem;
+    padding: 3rem 5rem;
     flex-direction: column;
     justify-content: center;
 }
 
 form.login button {
     border: 1px lightgray solid;
-    margin: 0;
+    margin: 0.5rem;
     padding: 0.6em 1.5rem;
     border-radius: 12rem;
     justify-content: center;
@@ -66,14 +79,15 @@ form.login button:hover {
     color: black;
     background-color: cyan;
     font-weight:400;
-
 } 
 
 form.login input {
+    margin: 0.2rem;
     padding: 0.5rem;
     border-radius: 4rem 10rem 10rem 4rem;
 }
 
 form.login label {
+    margin: 0.5rem;
     align-self: center;
 }

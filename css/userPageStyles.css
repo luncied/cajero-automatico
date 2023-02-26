@@ -1,0 +1,78 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+}
+
+
+nav.btn-nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 15px 0;
+    border-left: 1px rgba(40,180,200,0.7) solid;
+    border-bottom: 1px rgba(40,180,200,0.7) solid;
+    padding: 15px 0;
+    max-height: 15px;
+    min-height: 15px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.nav-btn {
+    padding: 0.5rem;
+    border: 0;
+    background-color: transparent;
+}
+
+.nav-btn:hover, .active-btn {
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(40,180,230,0.7);
+    transition: 500ms;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    min-height:85vh;
+}
+
+aside.visible-blnce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    margin: 15px 0;
+    padding: 15px 0;
+    max-height: 15px;
+}
+
+main > section {
+    visibility: hidden;
+}
+
+.active-btn {
+    transition: -5ms;
+    align-self: baseline;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+.active-section {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    min-height: 300px;
+    margin: 20px;
+    border: 1px lightgray solid;
+    padding: 30px;
+}
