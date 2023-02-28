@@ -13,8 +13,7 @@
     <header class="main-page-header">
         <nav class="main-top-navbar">
             <span id="logo" class="home-icon">
-                <img src="" alt="" class="home-img">
-                <a href="./index.html">Home</a>
+                <a href="./loginForm.html"><img id="home-icon" src="../img/home-outline.svg" alt="home-logo" class="home-img" href="./index.html"></a>
             </span>
             <h1>¡Te damos la bienvenida a Banco ...!</h1>
             <div class="empty"></div>
@@ -22,21 +21,25 @@
     </header>
     <main>
         <section class="login-form">
-            <form class="login" id="login-form">
+            <form class="login" id="login-form" href="./userPage.html">
+                <h2 class="form-title">Inicia sesión</h2>
                 <label for="userName">Nombre de usuario</label>
-                <input type="text" name="userName" id="userName" placeholder="Introduce tu nombre"><br>
+                <section class="form-input-cont" id="input-uName">
+                    <img class="form-icon" id="access-icon" src="../img/accessibility-outline.svg" alt="access icon">
+                    <input type="text" name="userName" id="userName" placeholder="Introduce tu nombre">
+                </section>
 
                 <label for="pass">Contraseña</label>
-                <input type="password" name="pass" id="pass" placeholder="Ingresa tu nip"><br>
-
-                <button type="submit" id="submit-login">Ingresar</button>
+                <section class="form-input-cont" id="input-pass">
+                    <img class="form-icon" id="access-icon" src="../img/lock-closed-outline.svg" alt="access icon">
+                    <input type="password" name="pass" id="pass" placeholder="Ingresa tu nip">
+                </section>
+                <button type="submit" id="submit-login" href="./userPage.html">Ingresar</button>
             </form>
         </section>
     </main>
-    <footer>
-
-    </footer>
-    <script src="../js/code.js"></script>
+    <script src="../js/bd.js"></script>
+    <script src="../js/loginPageCode.js"></script>
 </body>
 
 </html>

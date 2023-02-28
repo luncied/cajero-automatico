@@ -10,53 +10,55 @@
 <body>
     <header>
         <nav class="btn-nav-bar">
-                <!-- Hacer que solo cambie la sección main -->
-                <button name="check-blnce" class="nav-btn"  id="check-blnce-btn">Consultar saldos</button>
 
-                <!-- Hacer que solo cambie la sección main -->
-                <button name="withdraw-balance" class="nav-btn"  id="withdraw-blnce-btn">Retirar monto</button>
+            <button name="check-blnce" class="nav-btn"  id="check-blnce-btn">Consultar saldos</button>
 
-                <!-- Hacer que solo cambie la sección main -->
-                <button name="deposit" class="nav-btn"  id="deposit-btn">Depositar dinero</button>
+            <button name="withdraw-balance" class="nav-btn"  id="withdraw-blnce-btn">Retirar monto</button>
+
+            <button name="deposit" class="nav-btn"  id="deposit-btn">Depositar dinero</button>
+
+            <a href="./loginForm.html" id="logout">Cerrar sesión</a>
         </nav>
     </header>
     <main>
-        <aside class="visible-blnce active">
+        <aside class="hidden-section" id="visible-blnce">
             <section id="blnce-annot">
-                <!-- aqui va el saldo -->
-            <div class="current-blnce-page">Este es tu dinero</div>
+                <div class="current-blnce-page">Este es tu dinero</div>
             </section>
         </aside>
 
         <!-- Check Balance Section -->
         <section name="check-blnce" class="section-page" id="check-blnce-main">
-            <!-- aqui va el saldo -->
-            <p class="user">actual user</p>
             <div class="current-blnce-page">Este es tu dinero</div>
         </section>
 
         <!-- Withdraw section -->
         <section name="withdraw-balance" class="section-page" id="withdraw-blnce-main">
-            <!-- aqui va el saldo -->
-            <p class="user">actual user</p>
             <section class="withdraw-blnce-page">
                 <label for="blnc-to-withdraw"> Ingrese la cantidad a retirar </label>
                 <input type="text" name="blnc-to-withdraw" id="blnc-to-withdraw" class="withdraw">
 
-                <button type="submit" class="cancel-btn" id="cncl-withdraw">Cancelar</button>
-                <button type="submit" id="withdraw-btn">Retirar</button>
+                <section class="btns" id="withdraw-btns">
+                    <button type="submit" class="action-btn" id="withdraw-btn">Retirar</button>
+                    <button type="reset" class="cancel-btn" id="cncl-withdraw">Cancelar</button>
+                </section>
             </section>
         </section>
 
         <!-- Deposit section -->
         <section name="deposit" class="section-page" id="deposit-main">
+            <section class="deposit-blnce-page">
                 <label for="blnc-to-deposit"> Ingrese la cantidad a depositar </label>
                 <input type="text" name="blnc-to-deposit" id="blnc-to-deposit" class="deposit">
 
-                <button type="submit" class="cancel-btn" id="cncl-deposit">Cancelar</button>
-                <button type="submit" id="deposit-btn">Depositar</button>
+                <section class="btns" id="deposit-btns">
+                    <button type="submit" class="action-btn" id="deposit-btn">Depositar</button>
+                    <button type="reset" class="cancel-btn" id="cncl-deposit">Cancelar</button>
+                </section>
+            </section>
         </section>
     </main>
+    <script src="../js/bd.js"></script>
     <script src="../js/userPageCode.js"></script>
 </body>
 </html>
