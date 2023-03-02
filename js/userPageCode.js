@@ -107,8 +107,16 @@ function withdrawBalance(e){
 };
 
 function balanceError(e){
-    const balanceNot = document.createElement('div');
+    const errorNot = document.querySelector('.error');
 
+    if (errorNot) {
+        console.log(errorNot)
+        errorNot.remove();
+    };
+
+
+
+    const balanceNot = document.createElement('div');
     balanceNot.textContent = `No puedes tener en tu cuenta más de ${maxBalance} o menos de ${minBalance}`;
     balanceNot.classList.add('error');
 
