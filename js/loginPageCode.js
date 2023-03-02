@@ -5,7 +5,7 @@ const password = document.getElementById('pass');
 const userLog = [];
 let user;
 
-noReturn();
+// noReturn();
 formLogin.addEventListener('submit', loginSession); 
 // Nos pide dos parametros, un evento y una funcion.
 
@@ -17,11 +17,11 @@ function loginSession(e){
     let psw = validateCredentials(password);
 
     if(uName && psw){
-        console.log(uName);
-        console.log(psw);
-        console.log('acceso correcto');
+        // console.log(uName);
+        // console.log(psw);
+        // console.log('acceso correcto');
         addLocalStorage();
-        valitadeSessionLogin();
+        validateSessionLogin();
         return;
     };
 
@@ -61,13 +61,12 @@ function addLocalStorage (){
     localStorage.setItem('auth', 1);
 };
 
-
 // Función que valida si el valor de auth es 1.
 // Si auth = 1 pasamos a la pagina del usuario
-function valitadeSessionLogin (){
+function validateSessionLogin (){
     const auth = parseInt(localStorage.getItem('auth'));
     if (auth !== 1) {
-        window.location.replace('/');
+        window.location.replace('#');
         return;
     }
     location.assign('./userPage.html')
@@ -75,7 +74,7 @@ function valitadeSessionLogin (){
 
 function noReturn(){
     if(!localStorage.getItem('auth')){
-        window.onhashchange = function(){window.location.hash='no-back-button'};
+        location.assign('./loginForm.html');
         return;
     };
 };

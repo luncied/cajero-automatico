@@ -8,21 +8,26 @@ const logout = document.getElementById('logout');
 const uNameSession = JSON.parse(localStorage.getItem('user'));
 const amountToWithdraw = document.getElementById('blnc-to-withdraw');
 const amountToDeposit = document.getElementById('blnc-to-deposit');
-let uNameData = cuentas.filter(uName => uName.nombre === uNameSession);
+// objeto que contiene los datos del usuario
+let uNameData = cuentas.filter(uName => uName.nombre === uNameSession)[0];
+// index del objeto que contiene los datos del usuario
+let userIndx = cuentas.indexOf(uNameData);
 let actBtn;
 let actSite;
 let contActBtn = [];
 let saldo;
 
-
+// event listener de cuando damos click en un boton del navbar
 for (let i = 0; i < navbarBtns.length; i++) {
     navbarBtns[i].addEventListener('click', changePage);
 };
 
+// event listener que escucha la acción del logout
 logout.addEventListener('click', logoutSession);
-// Carga el saldo disponible
 
+// Carga el saldo disponible
 loadBalance();
+
 // Cambiar el diseño del boton seleccionado
 function changePage(e){
     hideBalance(e);
@@ -46,7 +51,7 @@ function changePage(e){
 
 function loadBalance(){
     for(let i = 0; i<balanceTag.length; i++) {
-        balanceTag[i].textContent = `Saldo disponible: $${uNameData[0].saldo}`;
+        balanceTag[i].textContent = `Saldo disponible: $${uNameData.saldo}`;
     };
 
 };
@@ -82,39 +87,39 @@ function btnFunction(e) {
 }
 
 function depositBalance(e){
-    saldo = uNameData[0].saldo + parseInt(amountToDeposit.value);
+    saldo = uNameData.saldo + parseFloat(amountToDeposit.value);
 
     if (saldo < minBalance || saldo > maxBalance) {
         balanceError(e);
         return;
     };
 
-    uNameData[0].saldo = saldo;
+    cuentas[userIndx].saldo = saldo;
+    uNameData.saldo = saldo;
     loadBalance();
 };
 
 function withdrawBalance(e){
-    saldo = uNameData[0].saldo - parseInt(amountToWithdraw.value);
+    saldo = uNameData.saldo - parseFloat(amountToWithdraw.value);
 
     if (saldo < minBalance || saldo > maxBalance) {
         balanceError(e);
         return;
     };
 
-    uNameData[0].saldo = saldo;
+    cuentas[userIndx].saldo = saldo;
+    uNameData.saldo = saldo;
     loadBalance();
 
 };
+
 
 function balanceError(e){
     const errorNot = document.querySelector('.error');
 
     if (errorNot) {
-        console.log(errorNot)
         errorNot.remove();
     };
-
-
 
     const balanceNot = document.createElement('div');
     balanceNot.textContent = `No puedes tener en tu cuenta más de ${maxBalance} o menos de ${minBalance}`;
@@ -128,8 +133,9 @@ function logoutSession(e){
     localStorage.clear();
     location.assign('./loginForm.html');
     noReturn();
-};
 
+    // revisar si existe un exit para cerrar el proceso
+};
 
 function noReturn(){
     if(localStorage.getItem('auth') === '1'){
